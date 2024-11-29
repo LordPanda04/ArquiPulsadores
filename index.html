@@ -12,16 +12,28 @@
     </div>
     <div class="contenedor1">
     <p class="slogan">
-        slogan
+        ¿Eres tan rápido como crees?
     </p>
     </div>
     <div class="contenedor2">
-      <input type="text" placeholder="NOMBRE"><br>
-      <input type="text" placeholder="N° SALA"><br>
-      <input type="text" placeholder="N° PLACA"><br>    
+        <input type="text" id="nombreInput" placeholder="NOMBRE"><br>
+        <input type="text" placeholder="N° SALA"><br>
+        <input type="text" placeholder="N° PLACA"><br>    
     </div>
     <div class="botonPagina">
-        <a href="parametros.html" class="button">INGRESAR</a>
+        <a href="parametros.html" class="button" onclick="guardarNombre()">INGRESAR</a>    
     </div>
+
+
+    <script>
+        // Función temporal para la prueba, eliminar después
+        // Función para guardar el nombre en localStorage
+        function guardarNombre() {
+            var nombre = document.getElementById("nombreInput").value;
+            if (nombre) {  // Si hay un nombre, lo guardamos en localStorage
+                localStorage.setItem("nombre", nombre);
+            }
+        }
+    </script>
 </body>
 </html>

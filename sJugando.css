@@ -1,0 +1,120 @@
+/* General */
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex-direction column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenedorPrincipal {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del título */
+.contenedor1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contenedor1 h1 {
+    font-size: 30px;
+    color: #333;
+}
+
+/* Contenedor de jugadores */
+.contenedor2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Coloca los jugadores en un único recuadro */
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.jugador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Ajusta el ancho para los nombres y puntajes */
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f9f9f9; /* Fondo claro para cada jugador */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.jugador .nombre,
+.jugador .puntaje {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.jugador .nombre {
+    text-align: left;
+    width: 70%; /* Espacio para el nombre */
+}
+
+.jugador .puntaje {
+    text-align: right;
+    width: 30%; /* Espacio para el puntaje */
+}
+
+/* Botones de la página */
+.botonPagina {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; /* Azul para los botones */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    transform: translateY(-3px); /* Desplazamiento al pasar el ratón */
+}
+
+/* Diferentes colores para los botones */
+.botonPagina .button:first-child {
+    background-color: #dc3545; /* Rojo para "Retirarse" */
+}
+
+.botonPagina .button:first-child:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+}
+
+.botonPagina .button:last-child {
+    background-color: #17a2b8; /* Azul para "Resultados" */
+}
+
+.botonPagina .button:last-child:hover {
+    background-color: #138496; /* Azul más oscuro al pasar el ratón */
+}

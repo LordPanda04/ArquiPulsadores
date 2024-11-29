@@ -1,0 +1,74 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #30E5BB; /* Fondo de la página */
+}
+
+/* Logo */
+.logo img {
+    width: 100%;  /* Hace que la imagen ocupe todo el ancho disponible */
+    max-width: 400px;  /* Tamaño máximo para que no se vea demasiado grande */
+    display: block;
+    margin: 20px auto; /* Centra la imagen */
+}
+
+/* Contenedor del eslogan */
+.contenedor1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.slogan {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Contenedor de los inputs */
+.contenedor2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contenedor2 input {
+    width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+    max-width: 400px; /* Ancho máximo de los inputs */
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contenedor2 input:focus {
+    border-color: #007bff; /* Cambia el borde cuando el input está en foco */
+    outline: none; /* Elimina el borde por defecto del navegador */
+}
+
+/* Botón */
+.botonPagina {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Color al pasar el ratón */
+    transform: translateY(-3px); /* Desplazamiento al pasar el ratón */
+}

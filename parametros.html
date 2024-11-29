@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ButtonBlink</title>
+    <link rel="stylesheet" href="sParametros.css">
 </head>
 <body>
     <div class="contenedor1">
         <h1>Sala #0001</h1>
     </div>
     <div class="contenedor2">
-        <p>Asthri</p>
-        <p>Leonardo</p>
-        <p>Davalos</p>
+        <h4>Jugadores</h4>
+        <p id="nombre1"></p>
+        <p id="nombre2">Asthri</p>
+        <p id="nombre3">Davalos</p>
     </div>
     <div class="contenedor3">
         <h3>Seleccione dificultad</h3>
@@ -34,5 +36,18 @@
         <a href="index.html" class="button">REGRESAR</a>
         <a href="jugando.html" class="button">INICIAR</a>
     </div>
+
+
+    <script>
+        // Función temporal para la prueba
+        // Recuperar el nombre de localStorage y actualizar el contenido en parametros.html
+        window.onload = function() {
+            var nombre = localStorage.getItem("nombre");
+            if (nombre) {
+                // Si hay un nombre guardado, lo insertamos en el primer párrafo de contenedor2
+                document.getElementById("nombre1").textContent = nombre;
+            }
+        }
+    </script>
 </body>
 </html>
