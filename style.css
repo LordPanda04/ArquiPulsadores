@@ -1,74 +1,95 @@
-/* General */
-* {
+/* General Styles */
+body {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #18f2b2;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #30E5BB; /* Fondo de la página */
-}
-
-/* Logo */
-.logo img {
-    width: 100%;  /* Hace que la imagen ocupe todo el ancho disponible */
-    max-width: 400px;  /* Tamaño máximo para que no se vea demasiado grande */
-    display: block;
-    margin: 20px auto; /* Centra la imagen */
-}
-
-/* Contenedor del eslogan */
+/* Contenedor 1: Logo */
 .contenedor1 {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.slogan {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+.logo {
+    width: 80px; /* Tamaño ajustado del logo */
+    height: auto;
 }
 
-/* Contenedor de los inputs */
+/* Contenedor 2: Título */
 .contenedor2 {
     text-align: center;
-    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
-.contenedor2 input {
-    width: 80%; /* Ocupa el 80% del ancho de la pantalla */
-    max-width: 400px; /* Ancho máximo de los inputs */
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+.titulo {
+    font-size: 1.8rem; /* Tamaño ajustado del título */
+    color: #3d19f0;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-.contenedor2 input:focus {
-    border-color: #007bff; /* Cambia el borde cuando el input está en foco */
-    outline: none; /* Elimina el borde por defecto del navegador */
+/* Contenedor 3: Frase */
+.contenedor3 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Botón */
+.frase {
+    font-size: 1rem; /* Tamaño ajustado de la frase */
+    color: #3d19f0;
+    font-weight: normal;
+}
+
+/* Botón de ingreso */
 .botonPagina {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: white;
+    font-size: 1rem;
+    padding: 10px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s;
+    background-color: #3d19f0;
+    color: #fff;
+    border-radius: 10px; /* Borde más redondeado */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-    background-color: #0056b3; /* Color al pasar el ratón */
-    transform: translateY(-3px); /* Desplazamiento al pasar el ratón */
+    background-color: #2a13b8;
+    transform: scale(1.05); /* Pequeño efecto al pasar el ratón */
+}
+
+/* Contenedor 5: Íconos */
+.contenedor5 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.icono {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%; /* Iconos redondos */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.icono:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
