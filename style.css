@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #18f2b2;
+    background-color: #FFF;
     font-family: 'Arial', sans-serif;
     height: 100vh;
     box-sizing: border-box;
@@ -32,7 +32,7 @@ body {
 
 .titulo {
     font-size: 1.8rem; /* Tamaño ajustado del título */
-    color: #3d19f0;
+    color: #000;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -45,7 +45,7 @@ body {
 
 .frase {
     font-size: 1rem; /* Tamaño ajustado de la frase */
-    color: #3d19f0;
+    color: #000;
     font-weight: normal;
 }
 
@@ -59,7 +59,7 @@ body {
     font-size: 1rem;
     padding: 10px 30px;
     text-decoration: none;
-    background-color: #3d19f0;
+    background-color: #000;
     color: #fff;
     border-radius: 10px; /* Borde más redondeado */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
@@ -67,7 +67,7 @@ body {
 }
 
 .button:hover {
-    background-color: #2a13b8;
+    background-color: #000;
     transform: scale(1.05); /* Pequeño efecto al pasar el ratón */
 }
 
@@ -75,15 +75,16 @@ body {
 .contenedor5 {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px; /* Más separación entre íconos */
     margin-top: 40px;
 }
 
 .icono {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: #fff;
-    border-radius: 50%; /* Iconos redondos */
+    border-radius: 10%; /* Esquinas menos redondeadas */
+    padding: 10px; /* Mayor padding interno */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;

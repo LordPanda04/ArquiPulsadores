@@ -3,51 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ButtonBlink</title>
+    <title>ButtonBlink - Parámetros</title>
     <link rel="stylesheet" href="sParametros.css">
 </head>
 <body>
-    <div class="contenedor1">
-        <h1>Sala #0001</h1>
-    </div>
-    <div class="contenedor2">
-        <h4>Jugadores</h4>
-        <p id="nombre1"></p>
-        <p id="nombre2">Asthri</p>
-        <p id="nombre3">Davalos</p>
-    </div>
-    <div class="contenedor3">
-        <h3>Seleccione dificultad</h3>
-        <form>
-            <input type="radio" id="facil" name="difficulty" value="facil">
-            <label for="facil">Fácil</label><br>
-        
-            <input type="radio" id="normal" name="difficulty" value="normal">
-            <label for="normal">Normal</label><br>
-        
-            <input type="radio" id="dificil" name="difficulty" value="dificil">
-            <label for="dificil">Difícil</label><br>
-        
-            <input type="radio" id="extremo" name="difficulty" value="extremo">
-            <label for="extremo">Extremo</label><br>
-        </form>
-    </div>
-    <div class="botonPagina">
-        <a href="index.html" class="button">REGRESAR</a>
-        <a href="jugando.html" class="button">INICIAR</a>
-    </div>
+    <div class="parametros-container">
+        <!-- Header -->
+        <a href="menu.html" class="header-link">
+            <header class="header">
+                <img src="images/buttonBlinkLogo.png" alt="ButtonBlink Logo" class="logo">
+                <h1 class="title">BUTTONBLINK</h1>
+            </header>
+        </a>
 
+        <!-- Sala -->
+        <div class="sala-box">
+            <p class="sala-number">SALA #0001</p>
+            <p class="sala-timer">10 SEGUNDOS PARA INICIAR PARTIDA</p>
+        </div>
 
-    <script>
-        // Función temporal para la prueba
-        // Recuperar el nombre de localStorage y actualizar el contenido en parametros.html
-        window.onload = function() {
-            var nombre = localStorage.getItem("nombre");
-            if (nombre) {
-                // Si hay un nombre guardado, lo insertamos en el primer párrafo de contenedor2
-                document.getElementById("nombre1").textContent = nombre;
-            }
-        }
-    </script>
+        <!-- Lista de Jugadores -->
+        <div class="players-box">
+            <ol class="players-list">
+                <li>aaaa</li>
+                <li>bbbb</li>
+                <li>cccc</li>
+                <li>dddd</li>
+                <li>eeee</li>
+            </ol>
+        </div>
+
+        <!-- Dificultad -->
+        <div class="difficulty-container">
+            <p class="difficulty-title">DIFICULTAD</p>
+            <div class="difficulty-levels">
+                <div class="level">1</div>
+                <div class="level">2</div>
+                <div class="level">3</div>
+                <div class="level">4</div>
+            </div>
+        </div>
+
+        <!-- Botón Blink -->
+        <a href="jugando.html" class="blink-btn">BLINK!</a>
+    </div>
 </body>
 </html>

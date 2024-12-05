@@ -1,133 +1,132 @@
-/* General */
-* {
+/* General Styles */
+body {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Fondo de la página */
-}
-
-/* Contenedor del título */
-.contenedor1 {
+.parametros-container {
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    margin-top: 20px;
 }
 
-h1 {
-    font-size: 30px;
-    color: #333;
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-/* Contenedor de los jugadores */
-.contenedor2 {
+.header-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2a7f64;
+}
+
+/* Sala Box */
+.sala-box {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.sala-number {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.sala-timer {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Lista de Jugadores */
+.players-box {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.players-list {
+    list-style: decimal;
+    padding-left: 20px;
+    margin: 0;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+/* Dificultad */
+.difficulty-container {
+    margin-bottom: 20px;
+}
+
+.difficulty-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.difficulty-levels {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.level {
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
-    margin: 20px 0;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.contenedor2 h4 {
-    font-size: 18px;
-    font-weight: normal;
-    color: #333;
-    margin-bottom: 20px; /* Aumento del espacio entre el subtítulo y los nombres */
-    width: 100%;
-    text-align: center;
-}
-
-.contenedor2 p {
-    margin: 10px 30px; /* Aumento del margen alrededor de los nombres */
-    font-size: 18px;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 1rem;
     font-weight: bold;
-    color: #333;
-    width: calc(33.33% - 60px); /* Ajuste del ancho para los tres nombres, con margen incluido */
-    text-align: center;
-    padding: 10px; /* Agregado para crear el recuadro */
-    background-color: #fff; /* Fondo blanco para el recuadro */
-    border: 2px solid #333; /* Borde oscuro alrededor de los nombres */
-    border-radius: 8px; /* Esquinas redondeadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para resaltar */
-}
-
-
-/* Contenedor de dificultad */
-.contenedor3 {
-    text-align: center;
-    margin-top: 30px;
-}
-
-h3 {
-    font-size: 22px;
-    color: #333;
-}
-
-/* Estilos para los botones de dificultad */
-form input[type="radio"] {
-    display: none; /* Oculta los botones de radio */
-}
-
-form label {
-    display: inline-block;
-    padding: 12px 25px;
-    margin: 10px;
-    background-color: #28a745; /* Verde para las dificultades */
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    width: 150px; /* Tamaño uniforme para los botones */
 }
 
-form input[type="radio"]:checked + label {
-    background-color: #218838; /* Color más oscuro para el botón seleccionado */
+.level:hover {
+    background-color: #f0f0f0;
 }
 
-form label:hover {
-    background-color: #218838;
-    transform: translateY(-3px); /* Desplazamiento al pasar el ratón */
-}
-
-/* Contenedor de los botones de navegación */
-.botonPagina {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.button {
+/* Botón Blink */
+.blink-btn {
     display: inline-block;
-    padding: 12px 25px;
-    background-color: #007bff; /* Color original de los botones */
-    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s;
-    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #d9c1c1;
+    color: #000;
+    border: 2px solid #d9c1c1;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.button:hover {
-    background-color: #0056b3; /* Color al pasar el ratón */
-    transform: translateY(-3px); /* Desplazamiento al pasar el ratón */
-}
-
-/* Diferente color para los botones "Regresar" e "Iniciar" */
-.botonPagina .button:first-child {
-    background-color: #dc3545; /* Rojo para "Regresar" */
-}
-
-.botonPagina .button:first-child:hover {
-    background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
-}
-
-.botonPagina .button:last-child {
-    background-color: #17a2b8; /* Azul para "Iniciar" */
-}
-
-.botonPagina .button:last-child:hover {
-    background-color: #138496; /* Azul más oscuro al pasar el ratón */
+.blink-btn:hover {
+    background-color: #c4abab;
 }
