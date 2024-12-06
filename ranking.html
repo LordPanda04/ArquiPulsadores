@@ -1,37 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puntuaciones</title>
+    <title>Ranking</title>
     <link rel="stylesheet" href="sRanking.css">
 </head>
 <body>
     <div class="ranking-container">
-        <div class="logo">
-            <img src="images/buttonBlinkLogo.png" alt="Logo" class="logo-img">
+        <!-- Logo -->
+        <header class="header">
+            <img src="images/buttonBlinkLogo.png" alt="Logo" class="logo">
+        </header>
+
+        <!-- Título -->
+        <h1 class="title">PUNTUACIONES</h1>
+
+        <!-- Barras de puntuación -->
+        <div class="scores-container">
+            <div class="score-box">
+                <div class="bar">
+                    <img src="images/character1.png" alt="Character 1" class="character">
+                </div>
+                <div class="info">
+                    <p>aaa</p>
+                    <p>1524</p>
+                </div>
+            </div>
+
+            <div class="score-box">
+                <div class="bar highlighted">
+                    <img src="images/character2.png" alt="Character 2" class="character">
+                </div>
+                <div class="info">
+                    <p>añañin</p>
+                    <p>1752</p>
+                </div>
+            </div>
+
+            <div class="score-box">
+                <div class="bar">
+                    <img src="images/character3.png" alt="Character 3" class="character">
+                </div>
+                <div class="info">
+                    <p>bbb</p>
+                    <p>1276</p>
+                </div>
+            </div>
         </div>
-        <h1>PUNTUACIONES</h1>
-        <div class="scores">
-            <div class="score-card">
-                <div class="image-container gray"></div>
-                <p>aaa</p>
-                <p class="score">1524</p>
-            </div>
-            <div class="score-card">
-                <div class="image-container gold"></div>
-                <p>añañin</p>
-                <p class="score">1752</p>
-            </div>
-            <div class="score-card">
-                <div class="image-container bronze"></div>
-                <p>bbb</p>
-                <p class="score">1276</p>
-            </div>
-        </div>
-        <div class="buttons">
-            <button class="btn">REVANCHA</button>
-            <button class="btn">SALIR</button>
+
+        <!-- Botones -->
+        <div class="buttons-container">
+            <a href="jugando.html" class="btn rematch-btn">REVANCHA</a>
+            <a href="menu.html" class="btn exit-btn">SALIR</a>
         </div>
     </div>
 </body>
