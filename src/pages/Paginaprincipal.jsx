@@ -1,6 +1,8 @@
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Paginaprincipal = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white">
       {/* Logo */}
@@ -14,18 +16,16 @@ export const Paginaprincipal = () => {
 
       {/* Título */}
       <h1 className="text-3xl font-bold text-black mb-2">BUTTONBLINK</h1>
-      <p className="text-lg text-gray-600 mb-8">
-        ¿Eres tan rápido como crees?
-      </p>
+      <p className="text-lg text-gray-600 mb-8">¿Eres tan rápido como crees?</p>
 
       {/* Botón de ingreso */}
       <div className="mb-10">
-        <a
-          href="login.html"
+        <button
+          onClick={() => navigate("/login")}
           className="px-8 py-3 bg-black text-white font-bold rounded-lg shadow-lg hover:bg-gray-800 transition duration-200"
         >
           INGRESAR
-        </a>
+        </button>
       </div>
 
       {/* Íconos */}

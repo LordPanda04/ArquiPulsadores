@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Ranking = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center items-center bg-white h-screen">
       <div className="w-11/12 max-w-md text-center">
@@ -48,18 +50,18 @@ export const Ranking = () => {
 
         {/* Botones */}
         <div className="flex flex-col gap-3">
-          <Link
-            to="/parametros"
+          <button
+            onClick={()=> navigate("/lobby")}
             className="py-3 px-5 bg-white text-black font-bold border-2 border-black rounded-lg hover:bg-gray-100 transition"
           >
             REVANCHA
-          </Link>
-          <Link
-            to="/menu"
+          </button>
+          <button
+            onClick={()=> navigate("/menu")}
             className="py-3 px-5 bg-gray-300 text-black font-bold border-2 border-gray-300 rounded-lg hover:bg-gray-400 transition"
           >
             SALIR
-          </Link>
+          </button>
         </div>
       </div>
     </div>

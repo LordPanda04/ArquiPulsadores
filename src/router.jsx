@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom"; 
 import { Paginaprincipal } from "./pages/Paginaprincipal"; 
 import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
 import { Menu } from "./pages/Menu";
+import { JoinRoom } from "./pages/JoinRoom";
+import { CreateRoom } from "./pages/CreateRoom";
 import { Lobby } from "./pages/Lobby"; 
 import { Jugando } from "./pages/Jugando";
 import { Ranking } from "./pages/Ranking";
@@ -16,8 +19,20 @@ export const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/register", //Ruta para register
+    element: <Register />,
+  },
+  {
     path: "/menu", // Ruta para el Menú
     element: <Menu />,
+  },
+  {
+    path: "/joinroom",
+    element: <JoinRoom />,
+  },
+  {
+    path: "/createroom",
+    element: <CreateRoom />,
   },
   {
     path: "/lobby", // Ruta para Lobby
@@ -32,18 +47,3 @@ export const router = createBrowserRouter([
     element: <Ranking />,
   },
 ]);
-// export const router = createBrowserRouter([
-//   {
-//     path: "/", // Ruta principal
-//     element: (
-//       <>
-//         <Paginaprincipal />
-//         <Login />
-//         <Menu />
-//         <Lobby />
-//         <Jugando />
-//         <Ranking />
-//       </>
-//     ), // Renderiza ambos componentes
-//   },
-// ]);

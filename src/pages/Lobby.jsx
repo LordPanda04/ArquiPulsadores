@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 
 export const Lobby = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center items-center bg-white h-screen">
       <div className="w-11/12 max-w-md text-center">
@@ -53,12 +55,12 @@ export const Lobby = () => {
         </div>
 
         {/* Botón Blink */}
-        <Link
-          to="/jugando"
+        <button
+          onClick={()=> navigate("/jugando")}
           className="inline-block py-2 px-6 bg-gray-300 text-black font-bold border-2 border-gray-300 rounded-lg shadow cursor-pointer hover:bg-gray-400 transition"
         >
           BLINK!
-        </Link>
+        </button>
       </div>
     </div>
   );

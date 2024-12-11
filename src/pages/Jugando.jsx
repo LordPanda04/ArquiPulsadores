@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Jugando = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center items-center bg-white h-screen">
       <div className="w-11/12 max-w-md text-center">
@@ -39,12 +41,12 @@ export const Jugando = () => {
         </div>
 
         {/* Botón Resultados */}
-        <Link
-          to="/ranking"
+        <button
+          onClick={()=> navigate("/ranking")}
           className="inline-block py-3 px-6 bg-gray-300 text-black font-bold border-2 border-gray-300 rounded-lg hover:bg-gray-400 transition"
         >
           RESULTADOS
-        </Link>
+        </button>
       </div>
     </div>
   );

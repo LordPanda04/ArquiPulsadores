@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center items-center bg-white h-screen">
       <div className="w-11/12 max-w-md text-center">
@@ -38,24 +40,18 @@ export const Login = () => {
           </div>
 
           {/* Botones */}
-          <a
-            href="menu.html"
+          <button
+            onClick={() => navigate("/menu")}
             className="w-full py-3 bg-black text-white font-bold rounded-md shadow hover:bg-gray-800 transition"
           >
             Ingresar
-          </a>
-          <a
-            href="parametros.html"
-            className="w-full py-3 bg-gray-400 text-black font-bold rounded-md shadow hover:bg-gray-500 transition"
-          >
-            Ingresar como invitado
-          </a>
-          <a
-            href="index.html"
+          </button>
+          <button
+            onClick={() => navigate("/")}
             className="w-full py-3 bg-gray-200 text-black font-bold rounded-md shadow hover:bg-gray-300 transition"
           >
             Regresar al menú
-          </a>
+          </button>
         </form>
 
         {/* Texto de registro */}

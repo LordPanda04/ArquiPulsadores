@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 export const Menu = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-center items-center bg-white h-screen">
       <div className="w-11/12 max-w-md text-center">
@@ -53,18 +55,18 @@ export const Menu = () => {
 
         {/* Buttons */}
         <div className="flex flex-col gap-4">
-          <Link
-            to="/parametros"
+          <button
+            onClick={()=> navigate("/createroom")}
             className="py-3 px-4 border-2 border-black rounded-lg font-bold text-black bg-white hover:bg-gray-100 transition"
           >
             CREATE ROOM
-          </Link>
-          <Link
-            to="/parametros"
+          </button>
+          <button
+            onClick={()=> navigate("/joinroom")}
             className="py-3 px-4 border-2 border-black rounded-lg font-bold text-black bg-gray-300 hover:bg-gray-400 transition"
           >
             JOIN ROOM
-          </Link>
+          </button>
         </div>
       </div>
     </div>
