@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Parametros = () => {
+export const Lobby = () => {
   return (
     <div className="flex justify-center items-center bg-white h-screen">
       <div className="w-11/12 max-w-md text-center">
