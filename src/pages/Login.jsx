@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -57,9 +57,9 @@ export const Login = () => {
         {/* Texto de registro */}
         <p className="mt-6 text-gray-600">
           ¿Aun sin cuenta?{' '}
-          <a href="#" className="text-black hover:underline">
-            Regístrate aquí
-          </a>
+          <Link to="/register" className="text-black hover:underline">
+          Regístrate aquí
+          </Link> 
         </p>
       </div>
     </div>

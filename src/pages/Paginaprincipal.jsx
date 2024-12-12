@@ -8,7 +8,7 @@ export const Paginaprincipal = () => {
       {/* Logo */}
       <div className="mb-6">
         <img
-          src="images/buttonBlinkLogo.png"
+          src="/src/images/BUTTONBLINK.png"
           alt="Logo ButtonBlink"
           className="w-24 h-auto"
         />
