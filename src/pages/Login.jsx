@@ -9,7 +9,7 @@ export const Login = () => {
         {/* Logo */}
         <div className="mb-6">
           <img
-            src="images/buttonBlinkLogo.png"
+            src="/src/images/BUTTONBLINK.png"
             alt="Logo"
             className="w-12 h-auto mx-auto"
           />
@@ -50,13 +50,13 @@ export const Login = () => {
             onClick={() => navigate("/")}
             className="w-full py-3 bg-gray-200 text-black font-bold rounded-md shadow hover:bg-gray-300 transition"
           >
-            Regresar al menú
+            Volver al incio
           </button>
         </form>
 
         {/* Texto de registro */}
         <p className="mt-6 text-gray-600">
-          ¿Aun sin cuenta?{' '}
+          ¿Aún sin cuenta?{' '}
           <Link to="/register" className="text-black hover:underline">
           Regístrate aquí
           </Link> 

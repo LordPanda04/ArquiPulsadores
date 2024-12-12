@@ -10,7 +10,7 @@ export const Lobby = () => {
         <Link to="/menu" className="block mb-6">
           <header className="flex items-center justify-center">
             <img
-              src="images/buttonBlinkLogo.png"
+              src="/src/images/BUTTONBLINK.png"
               alt="ButtonBlink Logo"
               className="w-10 h-auto mr-3"
             />

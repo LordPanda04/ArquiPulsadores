@@ -10,7 +10,7 @@ export const Menu = () => {
         <Link to="/" className="block mb-12">
           <header className="flex items-center">
             <img
-              src="images/buttonBlinkLogo.png"
+              src="/src/images/BUTTONBLINK.png"
               alt="ButtonBlink Logo"
               className="w-10 h-auto mr-3"
             />

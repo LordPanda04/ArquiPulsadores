@@ -9,7 +9,7 @@ export const Ranking = () => {
         {/* Header */}
         <header className="mb-5">
           <img
-            src="images/buttonBlinkLogo.png"
+            src="/src/images/BUTTONBLINK.png"
             alt="Logo"
             className="w-12 h-auto mx-auto"
           />
@@ -57,7 +57,7 @@ export const Ranking = () => {
             REVANCHA
           </button>
           <button
-            onClick={()=> navigate("/menu")}
+            onClick={()=> navigate("/me")}
             className="py-3 px-5 bg-gray-300 text-black font-bold border-2 border-gray-300 rounded-lg hover:bg-gray-400 transition"
           >
             SALIR

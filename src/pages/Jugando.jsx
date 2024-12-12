@@ -9,7 +9,7 @@ export const Jugando = () => {
         {/* Header */}
         <header className="flex items-center justify-center mb-5">
           <img
-            src="images/buttonBlinkLogo.png"
+            src="/src/images/BUTTONBLINK.png"
             alt="Logo"
             className="w-10 h-auto mr-3"
           />
