@@ -1,87 +1,74 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getMockScores } from '../utils/mockData';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Jugando = () => {
   const navigate = useNavigate();
-  const [scores, setScores] = useState([]);
-
-  // Función para ordenar y actualizar los puntajes
-  const updateRanking = () => {
-    const sortedScores = [...getMockScores()].filter(player => player && player.player && player.points >= 0) // Filtra entradas no válidas
-      .sort((a, b) => b.points - a.points); // Ordena en orden descendente
-    setScores(sortedScores); // Actualiza el estado con la lista ordenada
-  };
-
-  useEffect(() => {
-    // Inicializa los puntajes al montar el componente
-    updateRanking();
-
-    // Simula la actualización periódica de los datos
-    const interval = setInterval(() => {
-      updateRanking();
-    }, 2000); // Actualiza cada 2 segundos para reflejar cambios
-
-    return () => clearInterval(interval); // Limpia el intervalo al desmontar
-  }, []);
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-white px-4 pt-4">
-      {/* Logo */}
-      <div className="mb-6">
-        <img
-          src="/src/images/BUTTONBLINK.png"
-          alt="ButtonBlink Logo"
-          className="w-12 h-auto"
-        />
-      </div>
-
-      {/* Sala Info */}
-      <div className="text-center mb-4">
-        <div className="border-2 border-black rounded-md px-6 py-2 mb-2">
-          <p className="text-lg font-bold">SALA #0001</p>
+    <div
+      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center justify-center"
+      style={{ backgroundImage: "url('/src/images/background.png')" }}
+    >
+      {/* Contenedor Transparente */}
+      <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-3xl p-6 w-11/12 max-w-3xl text-center">
+        {/* Logo */}
+        <div className="mb-6">
+          <img
+            src="/src/images/BUTTONBLINK.png"
+            alt="Logo"
+            className="w-16 h-auto mx-auto"
+          />
         </div>
-        <div className="flex justify-center gap-6 mb-2">
-          <button className="border-2 border-black rounded-full w-12 h-12 flex items-center justify-center">
-            👥
-          </button>
-          <div className="flex items-center gap-1">
-            <span>⭐</span>
-            <span>⭐</span>
-            <span>⭐</span>
-          </div>
-        </div>
-        <p className="text-sm text-gray-600">1 MINUTO PARA FIN DE PARTIDA...</p>
-      </div>
 
-      {/* Tabla de puntuaciones */}
-      <div className="border-2 border-black rounded-md px-4 py-2 mb-6 w-full max-w-xs">
-        <table className="table-auto w-full text-sm text-center">
-          <thead>
-            <tr>
-              <th className="border-b border-black py-1">#</th>
-              <th className="border-b border-black py-1">Nombre</th>
-              <th className="border-b border-black py-1">Puntos</th>
-            </tr>
-          </thead>
-          <tbody>
-            {scores.map((player, index) => (
-              <tr key={player.player}> {/* Usa el nombre del jugador como clave única */}
-                <td className="border-b border-black py-1">{index + 1}</td>
-                <td className="border-b border-black py-1">{player.player}</td>
-                <td className="border-b border-black py-1">{player.points}</td>
+        {/* Información de Sala */}
+        <h2 className="text-lg font-bold text-black mb-4">SALA #0001</h2>
+        <div className="flex justify-center items-center gap-4 mb-6">
+          <span className="text-black text-2xl">👤</span>
+          <span className="text-yellow-500 text-2xl">⭐⭐⭐</span>
+        </div>
+        <p className="text-white mb-6">1 MINUTO PARA FIN DE PARTIDA...</p>
+
+        {/* Tabla de Puntuaciones */}
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full border border-black text-left">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="px-4 py-2 border border-black">#</th>
+                <th className="px-4 py-2 border border-black">Nombre</th>
+                <th className="px-4 py-2 border border-black">Acierto</th>
+                <th className="px-4 py-2 border border-black">Fallo</th>
+                <th className="px-4 py-2 border border-black">Total</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {[
+                { id: 1, name: "Bob", acierto: 10, fallo: 2, total: 12 },
+                { id: 2, name: "Fabio", acierto: 8, fallo: 3, total: 11 },
+                { id: 3, name: "Charlie", acierto: 7, fallo: 4, total: 11 },
+                { id: 4, name: "Daniel", acierto: 6, fallo: 5, total: 11 },
+                { id: 5, name: "Alice", acierto: 5, fallo: 6, total: 11 },
+                { id: 6, name: "Esteban", acierto: 4, fallo: 7, total: 11 },
+              ].map((row, index) => (
+                <tr key={index} className="hover:bg-gray-200">
+                  <td className="px-4 py-2 border border-black">{row.id}</td>
+                  <td className="px-4 py-2 border border-black">{row.name}</td>
+                  <td className="px-4 py-2 border border-black">{row.acierto}</td>
+                  <td className="px-4 py-2 border border-black">{row.fallo}</td>
+                  <td className="px-4 py-2 border border-black">{row.total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-      <button
-        onClick={() => navigate('/ranking')}
-        className="px-6 py-3 bg-rose-200 text-black font-bold rounded-md shadow-lg hover:bg-rose-300 transition"
-      >
-        RESULTADOS
-      </button>
+        {/* Botón de Resultados */}
+        <button
+          onClick={() => navigate("/results")}
+          className="mt-6 px-8 py-3 bg-green-600 text-white font-bold rounded-full hover:bg-green-700 transition"
+        >
+          RESULTS
+        </button>
+      </div>
     </div>
   );
 };
