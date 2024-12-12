@@ -57,7 +57,7 @@ export const Ranking = () => {
             REVANCHA
           </button>
           <button
-            onClick={()=> navigate("/me")}
+            onClick={()=> navigate("/menu")}
             className="py-3 px-5 bg-gray-300 text-black font-bold border-2 border-gray-300 rounded-lg hover:bg-gray-400 transition"
           >
             SALIR
