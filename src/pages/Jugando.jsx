@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getMockScores } from '../utils/mockData';
 
 export const Jugando = () => {
   const navigate = useNavigate();
+  const [scores, setScores] = useState([]);
+
+  // Función para ordenar y actualizar los puntajes
+  const updateRanking = () => {
+    const sortedScores = [...getMockScores()].sort((a, b) => b.points - a.points); // Ordena en orden descendente
+    setScores(sortedScores); // Actualiza el estado con la lista ordenada
+  };
+
+  useEffect(() => {
+    // Inicializa los puntajes al montar el componente
+    updateRanking();
+
+    // Simula la actualización periódica de los datos
+    const interval = setInterval(() => {
+      updateRanking();
+    }, 2000); // Actualiza cada 2 segundos para reflejar cambios
+
+    return () => clearInterval(interval); // Limpia el intervalo al desmontar
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-white px-4 pt-4">
@@ -20,20 +40,16 @@ export const Jugando = () => {
         <div className="border-2 border-black rounded-md px-6 py-2 mb-2">
           <p className="text-lg font-bold">SALA #0001</p>
         </div>
-        {/* Configuración */}
         <div className="flex justify-center gap-6 mb-2">
-          {/* Modalidad */}
           <button className="border-2 border-black rounded-full w-12 h-12 flex items-center justify-center">
             👥
           </button>
-          {/* Dificultad */}
           <div className="flex items-center gap-1">
             <span>⭐</span>
             <span>⭐</span>
             <span>⭐</span>
           </div>
         </div>
-        {/* Tiempo restante */}
         <p className="text-sm text-gray-600">1 MINUTO PARA FIN DE PARTIDA...</p>
       </div>
 
@@ -48,36 +64,17 @@ export const Jugando = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="border-b border-black py-1">1</td>
-              <td className="border-b border-black py-1">aaaaa</td>
-              <td className="border-b border-black py-1">1432</td>
-            </tr>
-            <tr>
-              <td className="border-b border-black py-1">2</td>
-              <td className="border-b border-black py-1">bbbb</td>
-              <td className="border-b border-black py-1">1245</td>
-            </tr>
-            <tr>
-              <td className="border-b border-black py-1">3</td>
-              <td className="border-b border-black py-1">ccccc</td>
-              <td className="border-b border-black py-1">987</td>
-            </tr>
-            <tr>
-              <td className="border-b border-black py-1">4</td>
-              <td className="border-b border-black py-1">ddddd</td>
-              <td className="border-b border-black py-1">874</td>
-            </tr>
-            <tr>
-              <td className="py-1">5</td>
-              <td className="py-1">eeeee</td>
-              <td className="py-1">534</td>
-            </tr>
+            {scores.map((player, index) => (
+              <tr key={index}>
+                <td className="border-b border-black py-1">{index + 1}</td>
+                <td className="border-b border-black py-1">{player.player}</td>
+                <td className="border-b border-black py-1">{player.points}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
 
-      {/* Botón Resultados */}
       <button
         onClick={() => navigate('/ranking')}
         className="px-6 py-3 bg-rose-200 text-black font-bold rounded-md shadow-lg hover:bg-rose-300 transition"
