@@ -55,7 +55,7 @@ export const Menu = () => {
 
           {/* Botón Agregar Placas */}
           <button
-            onClick={() => alert('Funcionalidad de agregar placas pendiente')}
+            onClick={() => navigate('/placas')}
             className="w-full py-3 border border-gray-800 rounded-md text-gray-800 hover:bg-gray-200 transition mb-6"
           >
             🎮 Agregar placas
