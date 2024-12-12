@@ -8,7 +8,8 @@ export const Jugando = () => {
 
   // Función para ordenar y actualizar los puntajes
   const updateRanking = () => {
-    const sortedScores = [...getMockScores()].sort((a, b) => b.points - a.points); // Ordena en orden descendente
+    const sortedScores = [...getMockScores()].filter(player => player && player.player && player.points >= 0) // Filtra entradas no válidas
+      .sort((a, b) => b.points - a.points); // Ordena en orden descendente
     setScores(sortedScores); // Actualiza el estado con la lista ordenada
   };
 
@@ -65,7 +66,7 @@ export const Jugando = () => {
           </thead>
           <tbody>
             {scores.map((player, index) => (
-              <tr key={index}>
+              <tr key={player.player}> {/* Usa el nombre del jugador como clave única */}
                 <td className="border-b border-black py-1">{index + 1}</td>
                 <td className="border-b border-black py-1">{player.player}</td>
                 <td className="border-b border-black py-1">{player.points}</td>
