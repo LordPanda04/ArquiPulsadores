@@ -1,8 +1,21 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Lobby = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Obtener la dificultad desde el state pasado
+  const difficulty = location.state?.difficulty;
+
+  // Función para mostrar las estrellas como emojis
+  const renderStars = (level) => {
+    let stars = '';
+    for (let i = 1; i <= 3; i++) {
+      stars += i <= level ? '⭐' : '☆'; // Estrella llena o vacía según la dificultad
+    }
+    return stars;
+  };
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-white px-4 pt-4">
@@ -31,9 +44,8 @@ export const Lobby = () => {
         </button>
         {/* Dificultad */}
         <div className="flex items-center gap-1">
-          <span>⭐</span>
-          <span>⭐</span>
-          <span>⭐</span>
+          {/* Mostrar las estrellas si la dificultad está definida */}
+          {difficulty && renderStars(difficulty)}
         </div>
       </div>
 

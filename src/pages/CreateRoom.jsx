@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const CreateRoom = () => {
   const navigate = useNavigate();
+  // Estado para almacenar la dificultad seleccionada
+  const [difficulty, setDifficulty] = useState(null);
+
+  // Función para manejar la selección de dificultad
+  const handleDifficultySelect = (level) => {
+    setDifficulty(level);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-       {/* Parte superior */}
-       <div className="flex items-center justify-between w-full mb-6">
+      {/* Parte superior */}
+      <div className="flex items-center justify-between w-full mb-6">
         {/* Return to menu */}
         <button
           onClick={() => navigate('/menu')}
@@ -59,13 +66,28 @@ export const CreateRoom = () => {
         <div className="mt-6">
           <p className="font-bold mb-2">DIFICULTAD</p>
           <div className="flex gap-4 justify-center">
-            <button className="border-2 border-black rounded-md w-10 h-10 flex items-center justify-center">
+            <button
+              onClick={() => handleDifficultySelect(1)} // Selección de dificultad 1
+              className={`border-2 border-black rounded-md w-10 h-10 flex items-center justify-center ${
+                difficulty === 1 ? 'bg-rose-200' : ''
+              }`}
+            >
               1
             </button>
-            <button className="border-2 border-black rounded-md w-10 h-10 flex items-center justify-center">
+            <button
+              onClick={() => handleDifficultySelect(2)} // Selección de dificultad 2
+              className={`border-2 border-black rounded-md w-10 h-10 flex items-center justify-center ${
+                difficulty === 2 ? 'bg-rose-200' : ''
+              }`}
+            >
               2
             </button>
-            <button className="border-2 border-black rounded-md w-10 h-10 flex items-center justify-center">
+            <button
+              onClick={() => handleDifficultySelect(3)} // Selección de dificultad 3
+              className={`border-2 border-black rounded-md w-10 h-10 flex items-center justify-center ${
+                difficulty === 3 ? 'bg-rose-200' : ''
+              }`}
+            >
               3
             </button>
           </div>
@@ -76,8 +98,9 @@ export const CreateRoom = () => {
       <button
         onClick={() => navigate('/lobby')}
         className="px-6 py-3 bg-rose-200 text-black font-bold rounded-md shadow-lg hover:bg-rose-300 transition"
+        disabled={!difficulty} // Deshabilitar si no se selecciona dificultad
       >
-        Ingresar al lobby
+        CREAR LOBBY
       </button>
     </div>
   );

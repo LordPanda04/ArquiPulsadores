@@ -17,7 +17,7 @@ export const JoinRoom = () => {
         </button>
         {/* Logo */}
         <img
-          src="images/buttonBlinkLogo.png"
+          src="/src/images/BUTTONBLINK.png"
           alt="ButtonBlink Logo"
           className="w-10 h-auto"
         />
