@@ -1,5 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Twitter } from 'lucide-react';
+import { Send } from 'lucide-react';
+import { Youtube } from 'lucide-react';
+import { Mail } from 'lucide-react';
+
+
+
 
 export const Paginaprincipal = () => {
   const navigate = useNavigate();
@@ -34,36 +41,20 @@ export const Paginaprincipal = () => {
         </div>
 
         {/* Íconos */}
-        <div className="flex justify-center gap-4">
-          <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition duration-200">
-            <img
-              src="data:image/svg+xml;base64,PHN2ZyB..."
-              alt="Twitter"
-              className="w-6 h-6"
-            />
+          <div className="flex justify-center gap-4">
+            <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-gray-300 transition duration-200">
+              <Twitter className="w-6 h-6 text-black" />
+            </div>
+            <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-gray-300 transition duration-200">
+              <Send className="w-6 h-6 text-black" />
+            </div>
+            <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-gray-300 transition duration-200">
+              <Mail className="w-6 h-6 text-black" />
+            </div>
+            <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-gray-300 transition duration-200">
+              <Youtube className="w-6 h-6 text-black" />
+            </div>
           </div>
-          <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition duration-200">
-            <img
-              src="data:image/svg+xml;base64,PHN2ZyB..."
-              alt="Telegram"
-              className="w-6 h-6"
-            />
-          </div>
-          <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition duration-200">
-            <img
-              src="data:image/svg+xml;base64,PHN2ZyB..."
-              alt="Email"
-              className="w-6 h-6"
-            />
-          </div>
-          <div className="w-14 h-14 bg-white border rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition duration-200">
-            <img
-              src="data:image/svg+xml;base64,PHN2ZyB..."
-              alt="YouTube"
-              className="w-6 h-6"
-            />
-          </div>
-        </div>
       </div>
     </div>
   );
