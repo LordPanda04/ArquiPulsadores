@@ -3,6 +3,7 @@
     { "player": "Bob", "points": 3000 },
     { "player": "Charlie", "points": 1000 },
     { "player": "Daniel", "points": 1000 },
-    { "player": "Esteban", "points": 100 }
+    { "player": "Esteban", "points": 100 },
+    { "player": "Fabio", "points": 1300 }
   ]
   
