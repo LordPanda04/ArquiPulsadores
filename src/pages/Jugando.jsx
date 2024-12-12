@@ -63,7 +63,7 @@ export const Jugando = () => {
 
         {/* Botón de Resultados */}
         <button
-          onClick={() => navigate("/results")}
+          onClick={() => navigate("/ranking")}
           className="mt-6 px-8 py-3 bg-green-600 text-white font-bold rounded-full hover:bg-green-700 transition"
         >
           RESULTS
