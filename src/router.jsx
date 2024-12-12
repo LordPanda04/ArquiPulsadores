@@ -8,6 +8,7 @@ import { CreateRoom } from "./pages/CreateRoom";
 import { Lobby } from "./pages/Lobby"; 
 import { Jugando } from "./pages/Jugando";
 import { Ranking } from "./pages/Ranking";
+import { Placas } from "./pages/Placas";
 
 export const router = createBrowserRouter([
   {
@@ -45,5 +46,9 @@ export const router = createBrowserRouter([
   {
     path: "/ranking", // Ruta para Ranking
     element: <Ranking />,
+  },
+  {
+    path: "/placas", // Ruta para Placas
+    element: <Placas />,
   },
 ]);
