@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const JoinRoom = () => {
   const navigate = useNavigate();
+  const [roomNumber, setRoomNumber] = useState(''); // Estado para el número de sala
+
+  // Manejar cambios en el input de sala
+  const handleInputChange = (e) => {
+    setRoomNumber(e.target.value);
+  };
 
   return (
     <div
@@ -29,15 +35,23 @@ export const JoinRoom = () => {
         {/* Título */}
         <h2 className="text-xl font-bold text-black mb-6">JOINING ROOM...</h2>
 
-        {/* Número de sala */}
-        <div className="border-2 border-black rounded-full px-6 py-2 mb-6 bg-green-200 text-lg font-bold">
-          SALA #0001
+        {/* Número de sala estático y entrada */}
+        <div className="mb-6">
+          <label className="block text-lg font-bold mb-2">SALA: #</label>
+          <input
+            type="text"
+            value={roomNumber}
+            onChange={handleInputChange}
+            placeholder="Introduce el número de sala"
+            className="w-full border-2 border-black rounded-full px-6 py-2 text-lg text-center focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
         </div>
 
         {/* Botón Ingresar */}
         <button
           onClick={() => navigate('/lobby')}
           className="w-full py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition"
+          disabled={!roomNumber.trim()} // Deshabilitar si el número de sala está vacío
         >
           JOIN ROOM
         </button>
