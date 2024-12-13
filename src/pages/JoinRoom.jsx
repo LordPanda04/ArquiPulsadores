@@ -5,67 +5,43 @@ export const JoinRoom = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-white px-4 pt-4">
-      {/* Parte superior */}
-      <div className="flex items-center justify-between w-full mb-6">
-        {/* Return to menu */}
-        <button
-          onClick={() => navigate('/menu')}
-          className="flex items-center gap-2 text-black font-bold"
-        >
-          <span className="text-lg">←</span> Return to menu
-        </button>
-        {/* Logo */}
-        <img
-          src="/src/images/BUTTONBLINK.png"
-          alt="ButtonBlink Logo"
-          className="w-10 h-auto"
-        />
-      </div>
-
-      {/* Título */}
-      <h2 className="text-xl font-bold text-black mb-4">JOINING GAME...</h2>
-
-      {/* Sala Input */}
-      <div className="flex items-center border-2 border-black rounded-md px-4 py-2 mb-6 w-full max-w-xs">
-        <span className="font-bold">SALA #</span>
-        <input
-          type="text"
-          placeholder=""
-          className="ml-2 border-l-2 border-black pl-2 w-full focus:outline-none"
-        />
-      </div>
-
-      {/* Game Settings */}
-      <div className="text-center mb-6 w-full max-w-xs">
-        <h3 className="text-lg font-bold flex items-center justify-center gap-2 mb-4">
-          <span>⚙️</span> GAME SETTINGS <span>⚙️</span>
-        </h3>
-        {/* Modalidad */}
-        <div className="flex flex-col items-center gap-4 mb-4">
-          <p className="font-bold">MODALIDAD</p>
-          <button className="border-2 border-black rounded-full w-12 h-12 flex items-center justify-center">
-            👥
+    <div
+      className="relative w-full h-screen bg-cover bg-center flex flex-col items-center justify-center"
+      style={{ backgroundImage: "url('/src/images/background.png')" }}
+    >
+      {/* Contenedor principal transparente */}
+      <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-3xl p-6 w-10/12 max-w-lg text-center">
+        {/* Parte superior con retorno y logo */}
+        <div className="flex items-center justify-between mb-6">
+          <button
+            onClick={() => navigate('/menu')}
+            className="flex items-center gap-2 text-black font-bold px-4 py-2 bg-green-200 rounded-full hover:bg-green-300 transition"
+          >
+            ←
           </button>
+          <img
+            src="/src/images/BUTTONBLINK.png"
+            alt="ButtonBlink Logo"
+            className="w-10 h-auto"
+          />
         </div>
-        {/* Dificultad */}
-        <div className="flex flex-col items-center gap-4">
-          <p className="font-bold">DIFICULTAD</p>
-          <div className="flex gap-2">
-            <span>⭐</span>
-            <span>⭐</span>
-            <span>⭐</span>
-          </div>
-        </div>
-      </div>
 
-      {/* Ingresar al Lobby */}
-      <button
-        onClick={() => navigate('/lobby')}
-        className="px-6 py-3 bg-rose-200 text-black font-bold rounded-md shadow-lg hover:bg-rose-300 transition w-full max-w-xs"
-      >
-        Ingresar al lobby
-      </button>
+        {/* Título */}
+        <h2 className="text-xl font-bold text-black mb-6">JOINING ROOM...</h2>
+
+        {/* Número de sala */}
+        <div className="border-2 border-black rounded-full px-6 py-2 mb-6 bg-green-200 text-lg font-bold">
+          SALA #0001
+        </div>
+
+        {/* Botón Ingresar */}
+        <button
+          onClick={() => navigate('/lobby')}
+          className="w-full py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition"
+        >
+          JOIN ROOM
+        </button>
+      </div>
     </div>
   );
 };
